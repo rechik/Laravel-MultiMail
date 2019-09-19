@@ -13,6 +13,9 @@ class SendMailJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $tries = 1;
+    public $deleteWhenMissingModels = true;
+
     protected $mailer_name;
     protected $mailable;
 
