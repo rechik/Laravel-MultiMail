@@ -38,5 +38,7 @@ class SendMailJob implements ShouldQueue
     public function handle()
     {
         MultiMail::from($this->mailer_name)->sendNow($this->mailable);
+
+        sleep(10);
     }
 }
